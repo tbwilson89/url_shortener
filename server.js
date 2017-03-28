@@ -51,6 +51,7 @@ mongoClient.connect(url, function(err, db) {
 
 app.get('/', function(req, res){
   console.log(process.env.MONGOLAB_URI)
+  //res.redirect('/api/replace')
   res.sendFile(path.join(__dirname, 'views/index.html'))
 })
 app.get(/^\/api\/./, (req, res) => {
@@ -120,6 +121,13 @@ app.get('/:data', (req, res) => {
       })
     }
   })
+})
+
+//attempting to use POST instead of GET through the index.html page.
+app.post('/test/shorten', (req, res) => {
+  console.log('POST received!')
+  var longUrl = req.body.url;
+  var shortURL = '';
 })
 /*
 app.post(/^\/new\/./, (req, res) => {
