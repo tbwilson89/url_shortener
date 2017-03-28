@@ -58,7 +58,7 @@ app.get(/^\/api\/./, (req, res) => {
   var addUrl = req.url.slice(5).toString()
   var listedInfo
   function callback(info) {
-    var display = { "original_url":info.url,"short_url":"https://fcc-projects-tbwilson.c9users.io/"+info._id }
+    var display = { "original_url":info.url,"short_url":"https://blooming-oasis-62929.herokuapp.com/"+info._id }
     res.send(display)
   }
   if (regex.test(addUrl)){
